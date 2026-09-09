@@ -1,0 +1,6 @@
+{
+  "name": "Kajaki u Emilki",
+  "description": "Wypożyczalnia kajaków na rzece Nidzie. Spływy z Pińczowa, Morawicy i Tokarni. Sprzęt i transport w cenie.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
