@@ -15,6 +15,7 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://i.ibb.co/6J0Sffp9/517895380-122128431548829040-7303880213518361275-n.jpg" />
+    <link rel="icon" type="image/jpeg" href="https://i.ibb.co/WWqgSHJ8/649612567-122161488350829040-603138030326539524-n.jpg" />
 
     <!-- Performance: Preconnect to Font domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -300,59 +301,6 @@
         transition: transform 0.2s ease, opacity 0.2s ease;
       }
 
-      @media (max-width: 880px) {
-        .nav-menu, .nav-cta {
-          display: none;
-        }
-        .nav-toggle-label {
-          display: flex;
-        }
-        .mobile-drawer {
-          display: none;
-          position: absolute;
-          top: 68px;
-          left: 0;
-          right: 0;
-          background-color: var(--surface);
-          border-bottom: 1px solid var(--border);
-          padding: 20px;
-          box-shadow: var(--shadow-lg);
-        }
-        .nav-toggle-checkbox:checked ~ .mobile-drawer {
-          display: block;
-        }
-        .nav-toggle-checkbox:checked + .nav-toggle-label .hamburger-icon span:nth-child(1) {
-          transform: translateY(7px) rotate(45deg);
-        }
-        .nav-toggle-checkbox:checked + .nav-toggle-label .hamburger-icon span:nth-child(2) {
-          opacity: 0;
-        }
-        .nav-toggle-checkbox:checked + .nav-toggle-label .hamburger-icon span:nth-child(3) {
-          transform: translateY(-7px) rotate(-45deg);
-        }
-        .mobile-menu-links {
-          list-style: none;
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-        }
-        .mobile-menu-links a {
-          display: block;
-          padding: 10px 0;
-          font-family: var(--font-heading);
-          font-weight: 700;
-          font-size: 1.1rem;
-          color: var(--text);
-          border-bottom: 1px solid var(--border-light);
-        }
-        .mobile-drawer-cta {
-          margin-top: 16px;
-          display: block;
-          width: 100%;
-          text-align: center;
-        }
-      }
-
       /* Hero Section with High Performance Background */
       .hero-section {
         position: relative;
@@ -376,6 +324,9 @@
 
       @media (max-width: 768px) {
         .hero-section {
+          background-image:
+            linear-gradient(180deg, rgba(20, 28, 35, 0.75) 0%, rgba(35, 65, 84, 0.84) 60%, rgba(234, 239, 243, 0.97) 100%),
+            url('https://i.ibb.co/6J0Sffp9/517895380-122128431548829040-7303880213518361275-n.jpg');
           padding: 50px 16px 44px;
           min-height: auto;
         }
@@ -601,12 +552,6 @@
         align-items: stretch;
       }
 
-      @media (max-width: 768px) {
-        .about-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
       .about-main-card {
         padding: 32px;
         display: flex;
@@ -742,12 +687,6 @@
         margin-top: 8px;
       }
 
-      @media (max-width: 900px) {
-        .routes-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
       .route-card {
         background-color: var(--surface);
         border: 1px solid var(--border);
@@ -874,12 +813,6 @@
         margin-top: 8px;
       }
 
-      @media (max-width: 640px) {
-        .gallery-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
       .gallery-item {
         background-color: var(--surface);
         border: 1px solid var(--border);
@@ -935,12 +868,6 @@
         min-width: 0;
       }
 
-      @media (max-width: 640px) {
-        .contact-card-main {
-          padding: 24px 20px;
-        }
-      }
-
       .contact-closing-quote {
         background-color: var(--river-blue-light);
         border-left: 4px solid var(--river-blue);
@@ -949,135 +876,444 @@
         font-size: 1.05rem;
         font-style: italic;
         color: var(--river-blue-dark);
-        margin-bottom: 28px;
+        margin-bottom: 30px;
         line-height: 1.6;
       }
 
-      .contact-details-grid {
+      .contact-layout {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px;
+        grid-template-columns: 3fr 2fr;
+        gap: 32px;
+        align-items: stretch;
       }
 
-      @media (max-width: 768px) {
-        .contact-details-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .contact-detail-box {
+      .contact-details-list {
         display: flex;
         flex-direction: column;
-        gap: 6px;
+        gap: 16px;
       }
 
-      .contact-detail-label {
-        font-family: var(--font-heading);
-        font-weight: 700;
-        font-size: 0.9rem;
+      .contact-row-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 14px 18px;
+        background-color: #F8FAFC;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+      }
+
+      .contact-icon-bubble {
+        width: 44px;
+        height: 44px;
+        background-color: var(--river-blue-light);
+        color: var(--river-blue);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+      }
+
+      .contact-text-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        min-width: 0;
+      }
+
+      .contact-label {
+        font-size: 0.8rem;
         text-transform: uppercase;
         letter-spacing: 0.06em;
+        font-weight: 700;
         color: var(--muted);
       }
 
-      .contact-detail-value {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: var(--text);
-      }
-
-      .phone-link {
-        color: var(--river-blue);
+      .contact-value {
         font-family: var(--font-heading);
-        font-size: 1.6rem;
-        font-weight: 800;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: var(--text);
+        word-break: break-word;
       }
 
-      /* Footer */
-      .site-footer {
+      .contact-value a {
+        color: var(--river-blue);
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        .contact-value a:hover {
+          color: var(--river-blue-dark);
+          text-decoration: underline;
+        }
+      }
+
+      .contact-subtext {
+        font-size: 0.86rem;
+        color: var(--text-muted);
+        line-height: 1.45;
+      }
+
+      .contact-action-panel {
         background-color: var(--river-blue-dark);
-        color: #D2E0EB;
-        padding: 48px 0 24px;
-        margin-top: 40px;
-      }
-
-      .footer-inner {
+        color: #FFFFFF;
+        border-radius: var(--radius-md);
+        padding: 28px 22px;
         display: flex;
         flex-direction: column;
-        gap: 28px;
         align-items: center;
+        justify-content: center;
         text-align: center;
       }
 
-      .footer-brand-title {
+      .action-panel-title {
         font-family: var(--font-heading);
-        font-size: 1.8rem;
-        font-weight: 800;
+        font-weight: 700;
+        font-size: 1.35rem;
+        margin-bottom: 8px;
         color: #FFFFFF;
       }
 
-      .footer-links {
-        display: flex;
-        gap: 20px;
-        list-style: none;
-        flex-wrap: wrap;
+      .action-panel-desc {
+        font-size: 0.92rem;
+        color: #D2DEE6;
+        margin-bottom: 20px;
+        line-height: 1.5;
+        max-width: 280px;
+      }
+
+      .btn-call-big {
+        display: inline-flex;
+        align-items: center;
         justify-content: center;
+        background-color: var(--river-blue);
+        color: #FFFFFF !important;
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 1.05rem;
+        padding: 13px 22px;
+        border-radius: var(--radius-pill);
+        border: 2px solid #5C8CA8;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 290px;
+        min-height: 48px;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        .btn-call-big:hover {
+          background-color: #24465B;
+          border-color: #8EB7D1;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      .tips-notice {
+        margin-top: 24px;
+        padding: 14px 18px;
+        background-color: #FFFFFF;
+        border: 1px dashed var(--border);
+        border-radius: var(--radius-sm);
+        font-size: 0.88rem;
+        color: #4B5563;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      /* Footer */
+      footer.site-footer {
+        background-color: var(--river-blue-dark);
+        color: #D2DEE6;
+        padding: 50px 0 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+      }
+
+      .footer-top {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 36px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .footer-brand-title {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+
+      .footer-brand-kajaki {
+        font-family: var(--font-body);
+        font-weight: 300;
+        font-size: 1.15rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #EAEFF3;
+      }
+
+      .footer-brand-emilki {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 1.55rem;
+        color: #A8D1E7;
+      }
+
+      .footer-desc {
+        font-size: 0.92rem;
+        line-height: 1.6;
+        color: #B5C8D4;
+        max-width: 400px;
+      }
+
+      .footer-col-title {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #FFFFFF;
+        margin-bottom: 14px;
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 0.92rem;
       }
 
       .footer-links a {
-        color: #E2EDF5;
+        color: #B5C8D4;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        .footer-links a:hover {
+          color: #FFFFFF;
+          text-decoration: underline;
+        }
+      }
+
+      .footer-contact-info {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 0.92rem;
+        color: #B5C8D4;
+      }
+
+      .footer-contact-info a {
+        color: #A8D1E7;
         font-weight: 600;
       }
 
-      .footer-copyright {
-        font-size: 0.88rem;
-        color: #92A8B8;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 20px;
-        width: 100%;
+      .footer-bottom {
+        padding-top: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.85rem;
+        color: #8CA0AE;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      /* Responsive Breakpoints & Mobile Optimization */
+      @media (max-width: 960px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .routes-grid {
+          grid-template-columns: 1fr;
+          max-width: 520px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .contact-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-top {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-inner {
+          height: 62px;
+        }
+
+        /* Mobile Hamburger Activation */
+        .nav-toggle-label {
+          display: flex;
+        }
+
+        .nav-menu {
+          display: none;
+          position: absolute;
+          top: 62px;
+          left: 0;
+          right: 0;
+          background-color: #FFFFFF;
+          flex-direction: column;
+          align-items: stretch;
+          padding: 16px 20px 24px;
+          gap: 12px;
+          border-bottom: 2px solid var(--border);
+          box-shadow: var(--shadow-lg);
+          z-index: 1000;
+        }
+
+        .nav-toggle-checkbox:checked ~ .nav-menu {
+          display: flex;
+        }
+
+        .nav-toggle-checkbox:checked + .nav-toggle-label .hamburger-icon span:nth-child(1) {
+          transform: translateY(7px) rotate(45deg);
+        }
+
+        .nav-toggle-checkbox:checked + .nav-toggle-label .hamburger-icon span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .nav-toggle-checkbox:checked + .nav-toggle-label .hamburger-icon span:nth-child(3) {
+          transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .nav-menu a {
+          font-size: 1.1rem;
+          padding: 10px 0;
+          border-bottom: 1px solid #F0F4F8;
+        }
+
+        .nav-menu .nav-cta {
+          margin-top: 8px;
+          text-align: center;
+          padding: 12px 20px;
+          font-size: 1.05rem;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-section {
+          padding: 44px 14px 40px;
+        }
+
+        .hero-cta-group {
+          flex-direction: column;
+          gap: 12px;
+          width: 100%;
+        }
+
+        .btn-primary, .btn-secondary {
+          width: 100%;
+          max-width: 320px;
+          padding: 13px 20px;
+          font-size: 1.02rem;
+        }
+
+        .contact-card-main {
+          padding: 24px 16px;
+        }
+
+        .rivers-bar {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 18px 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding-left: 14px;
+          padding-right: 14px;
+        }
+
+        .hero-title {
+          font-size: 2.1rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.18rem;
+        }
+
+        .hero-chip {
+          font-size: 0.85rem;
+          padding: 6px 12px;
+        }
+
+        .about-main-card, .checklist-card {
+          padding: 22px 16px;
+        }
+
+        .route-card-header, .route-card-body, .route-card-footer {
+          padding: 16px;
+        }
+
+        .contact-row-item {
+          padding: 12px 14px;
+        }
+
+        .contact-value {
+          font-size: 1.1rem;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 6px;
+        }
       }
     </style>
   </head>
   <body>
-    <!-- Top Announcement Banner -->
-    <div class="top-banner">
-      <span>Rezerwacje telefoniczne i pytania o trasy:</span>
-      <a href="tel:697884703">Zadzwoń: 697 884 703</a>
-    </div>
+    <!-- Top Announcement Ribbon -->
+    <aside id="top-announcement" class="top-banner" aria-label="Informacja o sezonie">
+      <span>🌿 <strong>Wypożyczalnia i spływy na Nidzie!</strong> Sezon 2026 w pełni otwarty</span>
+      <span>•</span>
+      <span>Rezerwacje telefoniczne: <a href="tel:697884703" id="banner-phone-link">697 884 703</a></span>
+    </aside>
 
-    <!-- Sticky Navigation Bar -->
-    <header class="site-header">
+    <!-- Sticky Header Navigation -->
+    <header id="site-header" class="site-header">
       <div class="container nav-inner">
-        <a href="#" class="nav-brand">
-          <img
-            src="https://i.ibb.co/WWqgSHJ8/649612567-122161488350829040-603138030326539524-n.jpg"
-            alt="Logo Kajaki u Emilki"
-            class="nav-logo-img"
-            width="42"
-            height="42"
-          />
+        <!-- Brand Wordmark -->
+        <a href="#start" id="nav-brand-link" class="nav-brand" title="Kajaki u Emilki - Strona główna">
+          <picture>
+            <source srcset="/images/logo.webp" type="image/webp" />
+            <img
+              src="https://i.ibb.co/WWqgSHJ8/649612567-122161488350829040-603138030326539524-n.jpg"
+              alt="Kajaki u Emilki logo"
+              class="nav-logo-img"
+              width="42"
+              height="42"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+              onerror="this.onerror=null;this.src='https://i.ibb.co/WWqgSHJ8/649612567-122161488350829040-603138030326539524-n.jpg';"
+            />
+          </picture>
           <div class="nav-brand-text">
-            <span class="brand-kajaki">KAJAKI U</span>
-            <span class="brand-emilki">EMILKI</span>
+            <span class="brand-kajaki">Kajaki</span>
+            <span class="brand-emilki">u Emilki</span>
           </div>
         </a>
 
-        <!-- Desktop Menu -->
-        <ul class="nav-menu">
-          <li><a href="#o-nas">O nas</a></li>
-          <li><a href="#trasy">Trasy spływów</a></li>
-          <li><a href="#galeria">Galeria</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-
-        <a href="tel:697884703" class="nav-cta">697 884 703</a>
-
-        <!-- CSS Mobile Toggle -->
-        <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Menu nawigacji" />
-        <label for="nav-toggle" class="nav-toggle-label" aria-label="Otwórz menu">
+        <!-- CSS Mobile Navigation Toggle (Zero JavaScript) -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Przełącz nawigację" />
+        <label for="nav-toggle" class="nav-toggle-label" title="Menu">
           <div class="hamburger-icon">
             <span></span>
             <span></span>
@@ -1085,260 +1321,449 @@
           </div>
         </label>
 
-        <!-- Mobile Drawer -->
-        <div class="mobile-drawer">
-          <ul class="mobile-menu-links">
-            <li><a href="#o-nas">O nas</a></li>
-            <li><a href="#trasy">Trasy spływów</a></li>
-            <li><a href="#galeria">Galeria</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
-          </ul>
-          <a href="tel:697884703" class="btn-primary mobile-drawer-cta">Zadzwoń: 697 884 703</a>
-        </div>
+        <!-- Navigation Links -->
+        <nav class="nav-menu" id="main-nav" aria-label="Główna nawigacja">
+          <a href="#o-nas" id="link-o-nas">O Nas</a>
+          <a href="#trasy" id="link-trasy">Trasy</a>
+          <a href="#galeria" id="link-galeria">Galeria</a>
+          <a href="#kontakt" id="link-kontakt">Kontakt</a>
+          <a href="#kontakt" id="nav-reserve-btn" class="nav-cta">Rezerwuj</a>
+        </nav>
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <!-- Hero Section -->
-      <section class="hero-section">
+      <section id="start" class="hero-section" aria-label="Strona główna">
         <div class="hero-content">
-          <h1 class="hero-title">Kajaki u Emilki</h1>
-          <div class="hero-subtitle">Niezapomniane spływy kajakowe rzeką Nidą</div>
-          <p class="hero-body">
-            Odkryj urok Ponidzia z perspektywy kajaka. Zapewniamy nowoczesny i bezpieczny sprzęt, profesjonalny transport oraz pomoc w doborze idealnej trasy dla rodzin, grup i początkujących.
+          <h1 id="hero-title" class="hero-title">Kajaki u Emilki</h1>
+          <p id="hero-subtitle" class="hero-subtitle">Spływy kajakowe rzeką Nidą 🌿</p>
+          <p id="hero-body" class="hero-body">
+            Wypożyczalnia kajaków — Nida, Czarna Nida, Biała Nida, Mierzawa. Idealne miejsca zarówno dla początkujących,
+            jak i doświadczonych kajakarzy.
           </p>
 
-          <div class="chips-container">
-            <span class="hero-chip">Rzeka Nida</span>
-            <span class="hero-chip">Czarna Nida</span>
-            <span class="hero-chip">Biała Nida</span>
-            <span class="hero-chip">Mierzawa</span>
+          <!-- Highlight Chips (Removed "Majówka na wodzie" as requested) -->
+          <div class="chips-container" id="hero-chips" aria-label="Atuty oferty">
+            <span class="hero-chip" id="chip-1">🚣‍♀️ Aktywny wypoczynek</span>
+            <span class="hero-chip" id="chip-2">👨‍👩‍👧‍👦 Rodzinnie i wesoło</span>
+            <span class="hero-chip" id="chip-3">🎒 Sprzęt i transport w cenie</span>
           </div>
 
+          <!-- CTAs -->
           <div class="hero-cta-group">
-            <a href="tel:697884703" class="btn-primary">Zarezerwuj spływ: 697 884 703</a>
-            <a href="#trasy" class="btn-secondary">Zobacz trasy</a>
+            <a href="tel:697884703" id="hero-cta-call" class="btn-primary" title="Zadzwoń i zarezerwuj kajaki">
+              <span>REZERWACJE: 697 884 703</span>
+            </a>
+            <a href="#galeria" id="hero-cta-gallery" class="btn-secondary" title="Zobacz zdjęcia ze spływów">
+              <span>GALERIA</span>
+            </a>
           </div>
         </div>
       </section>
 
-      <!-- Section: O Nas / Oferta -->
-      <section id="o-nas" class="section-lazy">
+      <!-- Ornamental River Divider -->
+      <div class="ornamental-divider" aria-hidden="true">
+        <span class="divider-line"></span>
+        <span class="divider-leaf">🌿</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- O Nas / Oferta Section -->
+      <section id="o-nas" class="section-lazy" aria-labelledby="heading-o-nas">
         <div class="container">
           <div class="section-header">
-            <span class="section-tag">Kompleksowa obsługa</span>
-            <h2 class="section-title">Wypożyczalnia Kajaków u Emilki</h2>
-            <p class="section-lead">Twój sprawdzony partner na spływy kajakowe po najpiękniejszych rzekach regionu.</p>
+            <span class="section-tag">O Nas i Oferta</span>
+            <h2 id="heading-o-nas" class="section-title">Chwila spokoju z dala od miejskiego zgiełku</h2>
+            <p class="section-lead">Nida to jedna z najłagodniejszych i najbardziej malowniczych rzek w całej Polsce.</p>
           </div>
 
           <div class="about-grid">
-            <div class="card about-main-card">
+            <!-- Left Narrative Column -->
+            <article class="card about-main-card" id="about-narrative-card">
               <div>
                 <p class="about-intro-p">
-                  Organizujemy jednodniowe oraz wielodniowe spływy kajakowe dla klientów indywidualnych, rodzin z dziećmi oraz zorganizowanych grup przyjaciół czy firm.
+                  Marzy Ci się chwila spokoju z dala od miasta? Spływ kajakowy rzeką Nidą to idealny sposób na relaks
+                  i kontakt z naturą. Nida to jedna z najpiękniejszych i najłagodniejszych rzek w Polsce — spokojny nurt,
+                  malownicze krajobrazy i mnóstwo dzikiej przyrody sprawiają, że to świetna opcja zarówno dla początkujących,
+                  jak i doświadczonych kajakarzy.
                 </p>
-                <p class="about-intro-p">
-                  Nida to jedna z najcieplejszych i najbardziej malowniczych rzek w Polsce, idealna na bezpieczny wypoczynek i łagodne meandrowanie wśród nienaruszonej przyrody Ponidzia.
-                </p>
+                <div class="about-highlight-box" id="about-experience-note">
+                  <strong>Płyniesz bez stresu:</strong> Piaszczyste dno, płytkie zatoczki i łagodny nurt czynią Nidę idealnym
+                  wyborem dla rodziców z dziećmi, seniorów oraz każdego, kto chce po prostu odpocząć na łonie czystej natury.
+                </div>
               </div>
-              <div class="about-highlight-box">
-                Zapewniamy pełen transport kajaków oraz uczestników spływu na miejsce startu i odbiór po zakończeniu trasy.
-              </div>
-            </div>
+            </article>
 
-            <div class="card checklist-card">
-              <div class="checklist-title">Dlaczego warto wybrać nas?</div>
-              <ul class="checklist-items">
-                <li class="checklist-item">
-                  <span class="check-badge">✓</span>
-                  <span>Wygodne, stabilne i polietylenowe kajaki 2-osobowe oraz 1-osobowe.</span>
-                </li>
-                <li class="checklist-item">
-                  <span class="check-badge">✓</span>
-                  <span>Kompletle wyposażenie: lekkie wiosła oraz kamizelki asekuracyjne w każdym rozmiarze.</span>
-                </li>
-                <li class="checklist-item">
-                  <span class="check-badge">✓</span>
-                  <span>Dowóz i odbiór sprzętu dokładnie tam, gdzie tego potrzebujesz.</span>
-                </li>
-                <li class="checklist-item">
-                  <span class="check-badge">✓</span>
-                  <span>Elastyczne godziny startu dostosowane do Twoich planów.</span>
-                </li>
-              </ul>
-              <div class="reassurance-banner">
-                Gwarantujemy miłą i pomocną obsługę od pierwszego kontaktu telefonicznego!
+            <!-- Right Checklist Column -->
+            <article class="card checklist-card" id="about-checklist-card">
+              <div>
+                <h3 class="checklist-title">
+                  <span>💧</span>
+                  <span>Co na Ciebie czeka?</span>
+                </h3>
+                <ul class="checklist-items" id="checklist-perks">
+                  <li class="checklist-item">
+                    <span class="check-badge">✔️</span>
+                    <span><strong>cisza i natura zamiast hałasu</strong> — zielone brzegi, śpiew ptaków i czyste powietrze</span>
+                  </li>
+                  <li class="checklist-item">
+                    <span class="check-badge">✔️</span>
+                    <span><strong>łatwa i bezpieczna trasa</strong> — rzeka bezpieczna dla każdego, idealna na pierwszy spływ</span>
+                  </li>
+                  <li class="checklist-item">
+                    <span class="check-badge">✔️</span>
+                    <span><strong>niezapomniane widoki</strong> — meandry Ponidzia, piaszczyste plaże i malownicze skarpy</span>
+                  </li>
+                  <li class="checklist-item">
+                    <span class="check-badge">✔️</span>
+                    <span><strong>świetna zabawa z rodziną lub znajomymi</strong> — relaks, wspólne chwile i piknik nad wodą</span>
+                  </li>
+                </ul>
               </div>
-            </div>
+
+              <!-- Reassurance Banner -->
+              <div class="reassurance-banner" id="reassurance-box">
+                Nie musisz mieć doświadczenia — wystarczy dobry humor i chęć przygody! Resztą zajmie się wypożyczalnia:
+                sprzęt, instruktaż i transport 🚐
+              </div>
+            </article>
           </div>
 
-          <div class="rivers-bar">
-            <div class="rivers-label">Obsługiwane rzeki w regionie:</div>
-            <div class="rivers-pills">
+          <!-- Rivers Covered Chip Row -->
+          <div class="rivers-bar" id="rivers-covered-bar">
+            <div class="rivers-label">
+              <span>🌊</span>
+              <span>Obsługiwane rzeki w dorzeczu Nidy:</span>
+            </div>
+            <div class="rivers-pills" id="rivers-chips-list">
               <span class="river-pill">Nida</span>
               <span class="river-pill">Czarna Nida</span>
               <span class="river-pill">Biała Nida</span>
               <span class="river-pill">Mierzawa</span>
             </div>
           </div>
-
-          <div class="ornamental-divider">
-            <span class="divider-line"></span>
-            <span class="divider-leaf">🛶</span>
-            <span class="divider-line"></span>
-          </div>
         </div>
       </section>
 
-      <!-- Section: Trasy -->
-      <section id="trasy" class="section-lazy">
+      <!-- Ornamental River Divider -->
+      <div class="ornamental-divider" aria-hidden="true">
+        <span class="divider-line"></span>
+        <span class="divider-leaf">🌿</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- Trasy (Departure Points) Section -->
+      <section id="trasy" class="section-lazy" aria-labelledby="heading-trasy">
         <div class="container">
           <div class="section-header">
-            <span class="section-tag">Punkty startowe & Trasy</span>
-            <h2 class="section-title">Popularne Miejsca Startu</h2>
-            <p class="section-lead">Pływamy z najważniejszych węzłów kajakowych w regionie. Poniżej przedstawiamy najpopularniejsze bazy wypadowe:</p>
+            <span class="section-tag">Punkty Startowe</span>
+            <h2 id="heading-trasy" class="section-title">Trasy i Miejsca Wodowania</h2>
+            <p class="section-lead">
+              Wypłyń z nami z wybranego punktu zbiórki nad Nidą. Zapewniamy kompletny dowóz sprzętu oraz odbiór po skończonym spływie.
+            </p>
           </div>
 
-          <div class="routes-grid">
-            <!-- Pińczów -->
-            <div class="route-card">
+          <div class="routes-grid" id="routes-container">
+            <!-- Route Card 1: Pińczów -->
+            <article class="route-card" id="route-pinczow">
               <div>
                 <div class="route-card-header">
                   <div>
-                    <span class="route-badge">Główna Baza</span>
+                    <span class="route-badge">Punkt zbiórki · Nida</span>
                     <h3 class="route-name">Pińczów</h3>
                   </div>
+                  <span style="font-size: 1.4rem;" aria-hidden="true">✅</span>
                 </div>
                 <div class="route-card-body">
                   <p class="route-desc">
-                    Sercem spływów Nidą jest Pińczów. Trasy stąd charakteryzują się łagodnym nurtem, szerokim korytem i wspaniałymi widokami na Garb Pińczowski. Urokliwe piaszczyste plaże sprzyjają kąpielom i piknikom.
+                    Malowniczy odcinek rzeki Nidy w sercu Ponidzia. Szerokie koryto, piaszczyste wypłycenia oraz zapierające
+                    dech w piersiach widoki na wzgórza garbu pińczowskiego. Wyjątkowo łagodny, stworzony dla rodzin z dziećmi.
                   </p>
                   <div class="route-tags">
-                    <div class="route-tag-row">Trudność: <strong>Łatwa / Dla rodzin</strong></div>
-                    <div class="route-tag-row">Rzeka: <strong>Nida</strong></div>
+                    <div class="route-tag-row">
+                      <span>⏱️ Czas spływu:</span>
+                      <strong>ok. 3 – 5 godzin</strong>
+                    </div>
+                    <div class="route-tag-row">
+                      <span>📍 Charakter:</span>
+                      <strong>Malownicza, spokojna, rodzinna</strong>
+                    </div>
+                    <div class="route-tag-row">
+                      <span>🦺 Poziom:</span>
+                      <strong>Początkujący & dzieci</strong>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="route-card-footer">
-                <a href="tel:697884703" class="btn-card-cta">Zapytaj o trasy z Pińczowa</a>
+                <a href="tel:697884703" class="btn-card-cta" title="Zadzwoń w sprawie trasy Pińczów">Zarezerwuj tę trasę</a>
               </div>
-            </div>
+            </article>
 
-            <!-- Morawica -->
-            <div class="route-card">
+            <!-- Route Card 2: Morawica -->
+            <article class="route-card" id="route-morawica">
               <div>
                 <div class="route-card-header">
                   <div>
-                    <span class="route-badge">Czarna Nida</span>
+                    <span class="route-badge">Punkt zbiórki · Czarna Nida / Nida</span>
                     <h3 class="route-name">Morawica</h3>
                   </div>
+                  <span style="font-size: 1.4rem;" aria-hidden="true">✅</span>
                 </div>
                 <div class="route-card-body">
                   <p class="route-desc">
-                    Trasy rozpoczynające się w Morawicy wiodą malowniczą i nieco bardziej zadrzewioną Czarną Nidą. To doskonały wybór na upalne dni – cień drzew i krystaliczna woda dają niezrównany relaks.
+                    Wyjątkowo urokliwa trasa startująca w Morawicy wzdłuż zielonych lasów i łąk. Krystalicznie czysta woda,
+                    delikatne meandry i piaszczyste łachy zachęcające do krótkiego odpoczynku i kąpieli w słońcu.
                   </p>
                   <div class="route-tags">
-                    <div class="route-tag-row">Trudność: <strong>Łatwa / Średnia</strong></div>
-                    <div class="route-tag-row">Rzeka: <strong>Czarna Nida</strong></div>
+                    <div class="route-tag-row">
+                      <span>⏱️ Czas spływu:</span>
+                      <strong>ok. 3 – 4.5 godziny</strong>
+                    </div>
+                    <div class="route-tag-row">
+                      <span>📍 Charakter:</span>
+                      <strong>Leśna, dzika przyroda, czysta woda</strong>
+                    </div>
+                    <div class="route-tag-row">
+                      <span>🦺 Poziom:</span>
+                      <strong>Łatwy / rekreacyjny</strong>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="route-card-footer">
-                <a href="tel:697884703" class="btn-card-cta">Zapytaj o trasy z Morawicy</a>
+                <a href="tel:697884703" class="btn-card-cta" title="Zadzwoń w sprawie trasy Morawica">Zarezerwuj tę trasę</a>
               </div>
-            </div>
+            </article>
 
-            <!-- Tokarnia -->
-            <div class="route-card">
+            <!-- Route Card 3: Tokarnia -->
+            <article class="route-card" id="route-tokarnia">
               <div>
                 <div class="route-card-header">
                   <div>
-                    <span class="route-badge">Kultura & Natura</span>
+                    <span class="route-badge">Punkt zbiórki · Nida</span>
                     <h3 class="route-name">Tokarnia</h3>
                   </div>
+                  <span style="font-size: 1.4rem;" aria-hidden="true">✅</span>
                 </div>
                 <div class="route-card-body">
                   <p class="route-desc">
-                    Start w okolicach Tokarni pozwala połączyć przygodę na wodzie ze zwiedzaniem pobliskiego skansenu. Rzeka meandruje wśród pól i łąk, gwarantując spokój i bliski kontakt z dziką przyrodą.
+                    Spływ w sąsiedztwie Parku Etnograficznego w Tokarni. Ustronne zakola, bogata roślinność wodna oraz
+                    liczne siedliska ptaków. Wspaniała propozycja na spokojną weekendową wycieczkę w gronie przyjaciół.
                   </p>
                   <div class="route-tags">
-                    <div class="route-tag-row">Trudność: <strong>Łatwa</strong></div>
-                    <div class="route-tag-row">Rzeka: <strong>Czarna Nida / Nida</strong></div>
+                    <div class="route-tag-row">
+                      <span>⏱️ Czas spływu:</span>
+                      <strong>ok. 3 – 5 godzin</strong>
+                    </div>
+                    <div class="route-tag-row">
+                      <span>📍 Charakter:</span>
+                      <strong>Historyczno-krajobrazowa, relaksacyjna</strong>
+                    </div>
+                    <div class="route-tag-row">
+                      <span>🦺 Poziom:</span>
+                      <strong>Dla każdego bez ograniczeń</strong>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="route-card-footer">
-                <a href="tel:697884703" class="btn-card-cta">Zapytaj o trasy z Tokarni</a>
+                <a href="tel:697884703" class="btn-card-cta" title="Zadzwoń w sprawie trasy Tokarnia">Zarezerwuj tę trasę</a>
               </div>
-            </div>
-          </div>
-
-          <div class="ornamental-divider">
-            <span class="divider-line"></span>
-            <span class="divider-leaf">🌿</span>
-            <span class="divider-line"></span>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- Section: Galeria -->
-      <section id="galeria" class="section-lazy">
+      <!-- Ornamental River Divider -->
+      <div class="ornamental-divider" aria-hidden="true">
+        <span class="divider-line"></span>
+        <span class="divider-leaf">🌿</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- Galeria Section - High Speed WebP with remote fallbacks -->
+      <section id="galeria" class="section-lazy" aria-labelledby="heading-galeria">
         <div class="container">
           <div class="section-header">
-            <span class="section-tag">Fotogaleria</span>
-            <h2 class="section-title">Kajaki u Emilki w Obiektywie</h2>
-            <p class="section-lead">Zobacz zdjęcia z naszych spływów i przekonaj się, jak piękny jest wypoczynek nad Nidą.</p>
+            <span class="section-tag">Fotorelacja</span>
+            <h2 id="heading-galeria" class="section-title">Galeria ze Spływów Nidą</h2>
+            <p class="section-lead">
+              Zobacz autentyczne kadry z rzeki Nidy — krystaliczna woda, bezpieczne kajaki polietylenowe i beztroskie chwile.
+            </p>
           </div>
 
-          <div class="gallery-grid">
-            <div class="gallery-item">
+          <div class="gallery-grid" id="gallery-container">
+            <!-- Image 1: w5WRmcT -->
+            <figure class="gallery-item" id="gallery-photo-1">
               <div class="gallery-image-wrap">
-                <img
-                  src="https://i.ibb.co/6J0Sffp9/517895380-122128431548829040-7303880213518361275-n.jpg"
-                  alt="Spływ kajakowy Nidą"
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcset="https://i.ibb.co/w5WRmcT/694255490-122213757926537842-6005240483192639894-n.jpg" type="image/webp" />
+                  <img
+                    src="https://i.ibb.co/w5WRmcT/694255490-122213757926537842-6005240483192639894-n.jpg"
+                    alt="Spływ kajakowy rzeką Nidą — bezpieczne kajaki na łonie natury"
+                    loading="lazy"
+                    decoding="async"
+                    fetchpriority="low"
+                    width="800"
+                    height="600"
+                    onerror="this.onerror=null;this.src='https://i.ibb.co/w5WRmcT/image.jpg';"
+                  />
+                </picture>
               </div>
-              <div class="gallery-caption">Malowniczy spływ w sercu Ponidzia</div>
-            </div>
+              <figcaption class="gallery-caption">Spokojny nurt i malownicze meandry Nidy 🌿</figcaption>
+            </figure>
 
-            <div class="gallery-item">
+            <!-- Image 2: TDx1Nxyp -->
+            <figure class="gallery-item" id="gallery-photo-2">
               <div class="gallery-image-wrap">
-                <img
-                  src="https://i.ibb.co/WWqgSHJ8/649612567-122161488350829040-603138030326539524-n.jpg"
-                  alt="Sprzęt kajakowy i wypożyczalnia"
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcset="https://i.ibb.co/TDx1Nxyp/694785268-122213757968537842-8543135245157385931-n.jpg" type="image/webp" />
+                  <img
+                    src="https://i.ibb.co/TDx1Nxyp/694785268-122213757968537842-8543135245157385931-n.jpg"
+                    alt="Wypożyczalnia Kajaki u Emilki — sprzęt gotowy do spływu"
+                    loading="lazy"
+                    decoding="async"
+                    fetchpriority="low"
+                    width="800"
+                    height="600"
+                    onerror="this.onerror=null;this.src='https://i.ibb.co/TDx1Nxyp/image.jpg';"
+                  />
+                </picture>
               </div>
-              <div class="gallery-caption">Nowoczesne i bezpieczne kajaki gotowe do drogi</div>
-            </div>
-          </div>
+              <figcaption class="gallery-caption">Komfortowe kajaki i bezpieczne kamizelki asekuracyjne</figcaption>
+            </figure>
 
-          <div class="ornamental-divider">
-            <span class="divider-line"></span>
-            <span class="divider-leaf">🌊</span>
-            <span class="divider-line"></span>
+            <!-- Image 3: S4DT2fc3 -->
+            <figure class="gallery-item" id="gallery-photo-3">
+              <div class="gallery-image-wrap">
+                <picture>
+                  <source srcset="https://i.ibb.co/S4DT2fc3/695792250-122213757950537842-4192163822274762846-n.jpg" type="image/webp" />
+                  <img
+                    src="https://i.ibb.co/S4DT2fc3/695792250-122213757950537842-4192163822274762846-n.jpg"
+                    alt="Grupa kajakarzy relaksująca się na wodzie w słoneczny dzień"
+                    loading="lazy"
+                    decoding="async"
+                    fetchpriority="low"
+                    width="800"
+                    height="600"
+                    onerror="this.onerror=null;this.src='https://i.ibb.co/S4DT2fc3/image.jpg';"
+                  />
+                </picture>
+              </div>
+              <figcaption class="gallery-caption">Idealny relaks z rodziną i przyjaciółmi na Ponidziu</figcaption>
+            </figure>
+
+            <!-- Image 4: 99N0CxmY -->
+            <figure class="gallery-item" id="gallery-photo-4">
+              <div class="gallery-image-wrap">
+                <picture>
+                  <source srcset="https://i.ibb.co/99N0CxmY/692875364-122213757938537842-2258287772619831599-n.jpg" type="image/webp" />
+                  <img
+                    src="https://i.ibb.co/99N0CxmY/692875364-122213757938537842-2258287772619831599-n.jpg"
+                    alt="Krajobraz rzeki Nidy z perspektywy kajaka — czysta przyroda"
+                    loading="lazy"
+                    decoding="async"
+                    fetchpriority="low"
+                    width="800"
+                    height="600"
+                    onerror="this.onerror=null;this.src='https://i.ibb.co/99N0CxmY/image.jpg';"
+                  />
+                </picture>
+              </div>
+              <figcaption class="gallery-caption">Cisza, dzika przyroda i odpoczynek od miasta</figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
-      <!-- Section: Kontakt -->
-      <section id="kontakt" class="section-lazy">
+      <!-- Ornamental River Divider -->
+      <div class="ornamental-divider" aria-hidden="true">
+        <span class="divider-line"></span>
+        <span class="divider-leaf">🌿</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- Kontakt Section -->
+      <section id="kontakt" class="section-lazy" aria-labelledby="heading-kontakt">
         <div class="container">
-          <div class="contact-card-main">
-            <div class="contact-closing-quote">
-              „Skontaktuj się z nami telefonicznie, aby zarezerwować kajaki, ustalić szczegóły trasy oraz godzinę transportu. Do zobaczenia na wodzie!”
+          <div class="section-header">
+            <span class="section-tag">Rezerwacje & Informacje</span>
+            <h2 id="heading-kontakt" class="section-title">Skontaktuj się i Rusz na Wodę</h2>
+            <p class="section-lead">Wystarczy jeden telefon — dobierzemy odpowiednią trasę i przygotujemy sprzęt dla Ciebie i Twojej ekipy.</p>
+          </div>
+
+          <div class="contact-card-main" id="contact-main-card">
+            <!-- Closing Prompt Line -->
+            <div class="contact-closing-quote" id="contact-closing-line">
+              „Zbierz ekipę, zarezerwuj kajaki i rusz na wodę! To idealny pomysł na weekend, urlop albo spontaniczny wypad 🌿”
             </div>
 
-            <div class="contact-details-grid">
-              <div class="contact-detail-box">
-                <span class="contact-detail-label">Telefon Rezerwacyjny</span>
-                <a href="tel:697884703" class="phone-link">📞 697 884 703</a>
+            <div class="contact-layout">
+              <!-- Contact Information Rows -->
+              <div class="contact-details-list" id="contact-rows-group">
+                <!-- Phone -->
+                <div class="contact-row-item" id="contact-row-phone">
+                  <div class="contact-icon-bubble" aria-hidden="true">📞</div>
+                  <div class="contact-text-wrap">
+                    <span class="contact-label">Telefon / Rezerwacje</span>
+                    <span class="contact-value">
+                      <a href="tel:697884703" id="contact-phone-direct">697 884 703</a>
+                    </span>
+                    <span class="contact-subtext">Czynne codziennie · odbieramy i doradzamy w wyborze trasy</span>
+                  </div>
+                </div>
+
+                <!-- Address -->
+                <div class="contact-row-item" id="contact-row-address">
+                  <div class="contact-icon-bubble" aria-hidden="true">📍</div>
+                  <div class="contact-text-wrap">
+                    <span class="contact-label">Baza Wypożyczalni</span>
+                    <span class="contact-value">Włoszczowice 28-404</span>
+                    <span class="contact-subtext">Województwo świętokrzyskie · dogodny dojazd z Kielc, Pińczowa i Jędrzejowa</span>
+                  </div>
+                </div>
+
+                <!-- Facebook -->
+                <div class="contact-row-item" id="contact-row-facebook">
+                  <div class="contact-icon-bubble" aria-hidden="true">🌐</div>
+                  <div class="contact-text-wrap">
+                    <span class="contact-label">Media Społecznościowe</span>
+                    <span class="contact-value">
+                      <a
+                        href="https://www.facebook.com/profile.php?id=61574871208992"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        id="contact-facebook-link"
+                      >
+                        Facebook: Kajaki u Emilki
+                      </a>
+                    </span>
+                    <span class="contact-subtext">Bieżące informacje, zdjęcia i relacje ze spływów</span>
+                  </div>
+                </div>
               </div>
 
-              <div class="contact-detail-box">
-                <span class="contact-detail-label">Lokalizacja i Obszar</span>
-                <div class="contact-detail-value">Pińczów / Ponidzie / Woj. Świętokrzyskie</div>
+              <!-- Action Call Panel -->
+              <div class="contact-action-panel" id="contact-action-box">
+                <span style="font-size: 2.2rem; margin-bottom: 6px;" aria-hidden="true">🛶</span>
+                <h3 class="action-panel-title">Szybka Rezerwacja</h3>
+                <p class="action-panel-desc">
+                  Zadzwoń bezpośrednio, aby zarezerwować kajaki na weekend lub dowolny dzień tygodnia.
+                </p>
+                <a href="tel:697884703" id="btn-call-action" class="btn-call-big" title="Zadzwoń pod numer 697 884 703">
+                  <span>ZADZWOŃ: 697 884 703</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Helpful Tips Notice -->
+            <div class="tips-notice" id="contact-tips-box">
+              <span style="font-size: 1.25rem;" aria-hidden="true">💡</span>
+              <div>
+                <strong>Co zabrać ze sobą na spływ?</strong>
+                Wygodny strój sportowy lub kąpielowy, nakrycie głowy, krem z filtrem UV, zapas wody i przekąski oraz nieprzemakalne etui na telefon.
               </div>
             </div>
           </div>
@@ -1346,18 +1771,47 @@
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div class="footer-brand-title">Kajaki u Emilki</div>
-        <ul class="footer-links">
-          <li><a href="#o-nas">O nas</a></li>
-          <li><a href="#trasy">Trasy</a></li>
-          <li><a href="#galeria">Galeria</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-        <div class="footer-copyright">
-          &copy; 2026 Kajaki u Emilki. Wszelkie prawa zastrzeżone. Spływy kajakowe Nidą, Czarną Nidą i Mierzawą.
+    <!-- Site Footer (2026 Updated) -->
+    <footer id="site-footer" class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <!-- Brand Column -->
+          <div id="footer-brand-col">
+            <div class="footer-brand-title">
+              <span class="footer-brand-kajaki">KAJAKI</span>
+              <span class="footer-brand-emilki">u Emilki</span>
+            </div>
+            <p class="footer-desc">
+              Profesjonalna wypożyczalnia kajaków na rzece Nidzie, Czarnej Nidzie, Białej Nidzie i Mierzawie.
+              Spływy rodzinne i grupowe z dowozem sprzętu i instruktarzem. Baza: Włoszczowice.
+            </p>
+          </div>
+
+          <!-- Quick Navigation Links -->
+          <div id="footer-nav-col">
+            <h4 class="footer-col-title">Nawigacja</h4>
+            <ul class="footer-links">
+              <li><a href="#o-nas">O Nas i Oferta</a></li>
+              <li><a href="#trasy">Trasy Spływów</a></li>
+              <li><a href="#galeria">Galeria Zdjęć</a></li>
+              <li><a href="#kontakt">Kontakt i Rezerwacje</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Details Column -->
+          <div id="footer-contact-col">
+            <h4 class="footer-col-title">Kontakt</h4>
+            <ul class="footer-contact-info">
+              <li>📞 Tel: <a href="tel:697884703">697 884 703</a></li>
+              <li>📍 Włoszczowice 28-404</li>
+              <li>🌐 <a href="https://www.facebook.com/profile.php?id=61574871208992" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Kajaki u Emilki. Wszelkie prawa zastrzeżone.</p>
+          <p>Spływy kajakowe Nidą · Pińczów · Morawica · Tokarnia</p>
         </div>
       </div>
     </footer>
